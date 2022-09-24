@@ -1,11 +1,14 @@
 Beer-Helper
+
 App for brewery sales teams to use to track accounts and visits.
+
 Link to project: 
+
 Demo User
 email: tester1234@gmail.com
 password: tester1234
 
-image
+![Screenshot](public/imgs/beer-helper-screenshot.png)
 
 How It's Made:
 Tech used: HTML, CSS, JavaScript, Bootstrap, Node.js, Express.js, MongoDB
