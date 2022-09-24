@@ -1,7 +1,5 @@
-<%- include('partials/header') -%>
-
-
-  <div class="container card-container">
+<%- include('partials/logged-in-header') -%>
+ <div class="container card-container">
     <h1>Accounts</h1>
   <div class="row row-cols-1 row-cols-md-3 g-4">
     <% for(var i=0; i<posts.length; i++) {%>
@@ -11,7 +9,7 @@
         <div class="card-body">
           <h5 class="card-title"><%= posts[i].title%></h5>
           <!-- <p class="card-text"><i class="px-1 bi bi-heart"></i><%= posts[i].likes.length - 1 %></p> -->
-        
+        <p class="card-text"><small class="text-muted">By: <%= posts[i].userName%></small></p>
           <p class="card-text"><%= posts[i].caption %></p>
           <a href="/post/<%= posts[i]._id%>" class="btn btn-outline-primary">View Account</a>
         </div>
