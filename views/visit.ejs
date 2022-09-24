@@ -1,0 +1,51 @@
+<%- include('partials/header') -%>
+<div class="container">
+  <div class="row mt-5">
+      <div class="col-6">
+          <div>
+              <p><strong>User Name</strong>: <%= user.userName %></p>
+              <p><strong>Email</strong>: <%= user.email %></p>
+              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+          </div>
+          <div class="mt-5">
+            <h2>Add a visit</h2>
+            <form action="/visit/createVisit" enctype="multipart/form-data" method="POST">
+              <div class="mb-3">
+                  <label for="date" class="form-label">Date of Visit</label>
+                  <input type="date" class="form-control" id="date" name="date">
+              </div>
+              <div class="mb-3">
+                <label for="accountName" class="form-label">Account Name</label>
+                <textarea class="form-control" id="accountName" name="accountName"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="distributor" class="form-label">Distributor</label>
+                <textarea class="form-control" id="distributor" name="distributor"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="contactName" class="form-label">Contact Name</label>
+                <textarea class="form-control" id="contactName" name="contactName"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="notes" class="form-label">Notes</label>
+                <textarea class="form-control" id="notes" name="notes"></textarea>
+              </div>
+              <div class="mb-3">
+                <label for="imgUpload" class="form-label">Image</label>
+                <input type="file" class="form-control" id="imageUpload" name="file">
+              </div>
+              <button type="submit" class="btn btn-primary" value="Upload">Submit</button>
+            </form>
+          </div>
+      </div>
+      <div class="col-6">
+        <h1>Account Visits</h1>
+ 
+        <div class="row justify-content-center mt-5">
+          <a class="btn btn-primary" href="/feed">Return to Feed</a>
+        </div>  
+      </div>  
+    </div>
+  </div>
+</div>
+<%- include('partials/footer') -%>
