@@ -10,10 +10,10 @@ body {
         right:0;
         top:0;
     }
-html body {
+/* html body {
      padding-top: 65px;
      padding-bottom: 65px;
-    }
+    } */
 .footer {
         position: fixed;
         left:0;
