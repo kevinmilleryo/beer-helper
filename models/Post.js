@@ -19,11 +19,13 @@ const PostSchema = new mongoose.Schema({
   },
    distributor: {
     type: String,
-    required: true,
   },
-  likes: {
-    type: Number,
-    required: true,
+   accountType: {
+    type: String,
+    enum: ['On-Premise','Off-Premise']
+  },
+   contact: {
+    type: String,
   },
   user: {
     type: mongoose.Schema.Types.ObjectId,

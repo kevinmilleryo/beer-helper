@@ -1,5 +1,5 @@
 <%- include('partials/logged-in-header') -%>
-<body>
+<body class="body-profile">
 <div class="container card-container">
   <div class="row mt-5">
       <div class="col-6">
@@ -18,6 +18,17 @@
               <div class="mb-3">
                   <label for="distributor" class="form-label">Distributor</label>
                   <input type="text" class="form-control" id="distributor" name="distributor">
+              </div>
+              <div  class="mb-3">
+               <label for="accountType">Type of Account:</label>
+                <select name = "accountType" id = "accountType">
+                  <option value ="On-Premise">On-Premise</option>
+                  <option value ="Off-Premise">Off-Premise</option>                  
+                </select>
+             </div>
+              <div class="mb-3">
+                  <label for="contact" class="form-label">Main Contact</label>
+                  <input type="text" class="form-control" id="contact" name="contact">
               </div>
               <div class="mb-3">
                 <label for="caption" class="form-label">Notes</label>

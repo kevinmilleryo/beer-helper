@@ -42,7 +42,8 @@ module.exports = {
         caption: req.body.caption,
         distributor: req.body.distributor,
         userName: postUser.userName,
-        likes: 0,
+        accountType: req.body.accountType,
+        contact: req.body.contact,
         user: req.user.id,
       });
       console.log("Post has been added!");
