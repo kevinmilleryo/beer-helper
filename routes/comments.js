@@ -10,7 +10,7 @@ router.post("/createComment/:id", commentsController.createComment);
 //! Added delete comment route
 router.delete("/deleteComment/:postid/:commentid", commentsController.deleteComment);
 
-router.put("/likeComment/:postid/:commentid", commentsController.likeComment);
+// router.put("/likeComment/:postid/:commentid", commentsController.likeComment);
 
 
 module.exports = router;
