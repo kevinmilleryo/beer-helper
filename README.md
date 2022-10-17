@@ -4,7 +4,7 @@ App for brewery sales teams to use to track accounts and visits.
 
 Link to project: https://beer-sales-helper.herokuapp.com/
 
-Demo User
+Demo User   
 email: tester1234@gmail.com
 password: tester1234
 
