@@ -1,6 +1,6 @@
 const cloudinary = require("../middleware/cloudinary");
 const Account = require("../models/Account");
-const Comment = require("../models/Comment");
+const Visit = require("../models/Visit");
 const User = require("../models/User");
 
 module.exports = {
@@ -23,8 +23,8 @@ module.exports = {
   getAccount: async (req, res) => {
     try {
       const account = await Account.findById(req.params.id);
-      const comments = await Comment.find({post: req.params.id}).sort({ createdAt: "asc" }).lean();
-      res.render("account.ejs", { account: account, user: req.user, comments: comments });
+      const visits = await Visit.find({account: req.params.id}).sort({ createdAt: "asc" }).lean();
+      res.render("account.ejs", { account: account, user: req.user, visits: visits });
     } catch (err) {
       console.log(err);
     }

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const CommentSchema = new mongoose.Schema({
+const VisitSchema = new mongoose.Schema({
   date: {
    type: Date,
    reqired: true,
@@ -9,9 +9,9 @@ const CommentSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  post: {
+  account: {
     type: mongoose.Schema.Types.ObjectId,
-    ref: "Post",
+    ref: "Account",
   },  
   //! Added new schema properties to link comments to users - username for attribution, ID for show/hide delete button
   createdBy: {
@@ -29,4 +29,4 @@ const CommentSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Comment", CommentSchema);
+module.exports = mongoose.model("Visit", VisitSchema);
