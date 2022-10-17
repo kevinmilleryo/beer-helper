@@ -3,12 +3,12 @@
 <div class="container card-container">
   <div class="row justify-content-center mt-5">
     <div class="col-6">
-      <h2><%= post.title %></h2>
-      <img class="img-fluid" src="<%= post.image%>" />
+      <h2><%= account.title %></h2>
+      <img class="img-fluid" src="<%= account.image%>" />
       <div class="row justify-content-between">
-        <%if(post.user == user.id){ %>
+        <%if(account.user == user.id){ %>
         <form
-          action="/post/deletePost/<%= post.id %>?_method=DELETE"
+          action="/account/deleteAccount/<%= account.id %>?_method=DELETE"
           method="POST"
           class="col-3"
         >
@@ -18,10 +18,10 @@
       </div>
     </div>
     <div class="col-3 mt-5">
-      <p>Distributor: <%= post.distributor %></p>
-      <p>Account Type: <%= post.accountType %></p>
-      <p>Main Contact: <%= post.contact %></p>
-      <p>Notes: <%=post.caption %></p>
+      <p>Distributor: <%= account.distributor %></p>
+      <p>Account Type: <%= account.accountType %></p>
+      <p>Main Contact: <%= account.contact %></p>
+      <p>Notes: <%=account.notes %></p>
     </div>
     <ul>
      <% for(var i=0; i<comments.length; i++) {%>
@@ -44,7 +44,7 @@
     </ul>
        <div class="mt-5">
             <h2>Log a visit</h2>
-            <form action="/comment/createComment/<%=post._id%>"  method="POST">
+            <form action="/comment/createComment/<%=account._id%>"  method="POST">
                 <div class="mb-3">
                   <label for="date" class="form-label">Date</label>
                   <input type="date" class="form-control" id="date" name="date">
