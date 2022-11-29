@@ -20,7 +20,7 @@ module.exports = {
       console.log(err);
     }
   },
-  //! Added delete comment method
+  //! Added delete visit method
   deleteVisit: async (req, res) => {
     try {
       await Visit.deleteOne({ _id: req.params.visitid })
