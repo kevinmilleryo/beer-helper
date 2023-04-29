@@ -2,7 +2,7 @@ Beer-Helper
 
 App for brewery sales teams to use to track accounts and visits.
 
-Link to project: https://beer-sales-helper.herokuapp.com/
+Link to project: https://beer-helper.cyclic.app/
 
 Demo User  
 email: tester1234@gmail.com
@@ -11,7 +11,7 @@ password: tester1234
 ![Screenshot](public/imgs/beer-helper-screenshot.png)
 
 How It's Made:
-Tech used: HTML, CSS, JavaScript, Bootstrap, Node.js, Express.js, MongoDB
+Tech used: EJS, CSS, JavaScript, Bootstrap, Node.js, Express.js, MongoDB
 
 Optimizations: Would like to eventually add a sort function for sorting by account type, distributor, user, etc. Would like to be able to export accounts by week, month, etc.
 
