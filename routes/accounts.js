@@ -7,7 +7,11 @@ const { ensureAuth, ensureGuest } = require("../middleware/auth");
 //Post Routes - simplified for now
 router.get("/:id", ensureAuth, accountsController.getAccount);
 
-router.post("/createAccount", upload.single("file"), accountsController.createAccount);
+router.post(
+  "/createAccount",
+  upload.single("file"),
+  accountsController.createAccount
+);
 
 router.delete("/deleteAccount/:id", accountsController.deleteAccount);
 

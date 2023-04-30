@@ -15,7 +15,21 @@ module.exports = {
   getFeed: async (req, res) => {
     try {
       const accounts = await Account.find().sort({ createdAt: "desc" }).lean();
-      res.render("feed.ejs", { accounts: accounts, user: req.user });
+      res.render("feed.ejs", {
+        accounts: accounts,
+        user: req.user,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  },
+  getAscFeed: async (req, res) => {
+    try {
+      const accounts = await Account.find().sort({ createdAt: "asc" }).lean();
+      res.render("feed.ejs", {
+        accounts: accounts,
+        user: req.user,
+      });
     } catch (err) {
       console.log(err);
     }
@@ -23,15 +37,21 @@ module.exports = {
   getAccount: async (req, res) => {
     try {
       const account = await Account.findById(req.params.id);
-      const visits = await Visit.find({account: req.params.id}).sort({ createdAt: "asc" }).lean();
-      res.render("account.ejs", { account: account, user: req.user, visits: visits });
+      const visits = await Visit.find({ account: req.params.id })
+        .sort({ createdAt: "asc" })
+        .lean();
+      res.render("account.ejs", {
+        account: account,
+        user: req.user,
+        visits: visits,
+      });
     } catch (err) {
       console.log(err);
     }
   },
   createAccount: async (req, res) => {
     try {
-     const postUser = await User.findById(req.user.id)
+      const postUser = await User.findById(req.user.id);
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path);
 
