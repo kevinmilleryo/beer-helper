@@ -71,10 +71,14 @@ body {
     font-size: 22px;
 }
 
-/* body{
-background-color: rgb(136, 224, 224);
+/* body {
+    background-color: orange;
 } */
 
 .d-flex {
     gap: 20px;
+}
+
+.nav-item {
+    text-align: right;
 }
