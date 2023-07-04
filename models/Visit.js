@@ -13,7 +13,7 @@ const VisitSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: "Account",
   },  
-  //! Added new schema properties to link comments to users - username for attribution, ID for show/hide delete button
+  //! Added new schema properties to link visits to users - username for attribution, ID for show/hide delete button
   createdBy: {
     type: String,
     ref: "User",

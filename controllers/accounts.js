@@ -34,6 +34,27 @@ module.exports = {
       console.log(err);
     }
   },
+  search: async (req, res) => {
+  const query = req.query.query;
+  try {
+    const accounts = await Account.find({
+      $or: [
+        { name: { $regex: query, $options: 'i' } },
+        { notes: { $regex: query, $options: 'i' } },
+        { distributor: { $regex: query, $options: 'i' } },
+        { userName: { $regex: query, $options: 'i' } },
+        { accountType: { $regex: query, $options: 'i' } },
+        { contact: { $regex: query, $options: 'i' } },
+      ],
+    });
+    res.render('feed.ejs', 
+    { accounts, user: req.user }
+     );
+  } catch (err) {
+    console.error('Error searching accounts:', err);
+    res.render('error');
+  }
+},
   getAccount: async (req, res) => {
     try {
       const account = await Account.findById(req.params.id);
@@ -51,7 +72,7 @@ module.exports = {
   },
   createAccount: async (req, res) => {
     try {
-      const postUser = await User.findById(req.user.id);
+      const accountUser = await User.findById(req.user.id);
       // Upload image to cloudinary
       const result = await cloudinary.uploader.upload(req.file.path);
 
@@ -61,7 +82,7 @@ module.exports = {
         cloudinaryId: result.public_id,
         notes: req.body.notes,
         distributor: req.body.distributor,
-        userName: postUser.userName,
+        userName: accountUser.userName,
         accountType: req.body.accountType,
         contact: req.body.contact,
         user: req.user.id,
