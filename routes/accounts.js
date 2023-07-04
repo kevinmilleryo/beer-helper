@@ -4,7 +4,7 @@ const upload = require("../middleware/multer");
 const accountsController = require("../controllers/accounts");
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
-//Post Routes - simplified for now
+//Account Routes - simplified for now
 router.get("/:id", ensureAuth, accountsController.getAccount);
 
 router.post(
